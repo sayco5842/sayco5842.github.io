@@ -10,62 +10,9 @@
 * IoC 컨테이너에 의해 인스턴스화, 관리,생성
 
 ## IoC 컨테이너 - ApplicationContext
-빈 설정 방법
-* ClassPathXmlApplicationContext (xml파일로 bean 설정)
-* AnnotationConfigApplicationContext (Java config) (ComponentScacn-> annotation을 찾아 빈으로 등록)
-
 ## IoC 컨테이너 - Autowire
-
-사용 위치
-* 생성자
-* 세터
-* 필드
-
-
-같은 타입 빈 여러개인 경우
-* @Primary
-* 해당 타입의 모든 빈 주입
-* @Qualifier
-
-bean lifecyle
-* InitializingBean
-* @PostConstruct
-* @Bean(initMethod)
-* xml init-method
-
-
-beanPostProcessor
-* 빈 후처리기
-* 빈(Bean)의 설정을 후처리(postprocessing)함으로써 빈의 생명 주기와 빈 팩토리의 생명주기에 관여.
-* 빈의 초기화 되기 전, 초기화 된 후 2개의 기회를 제공.
-* 빈 프로퍼티의 유효성 검사 등에 사용.
-* 다른 초기화 메소드인 afterPropertiesSet()과 init-method가 호출되기 직전과 직후에 호출되어짐.
-
-빈 후처리 과정 (Process of Bean Postprocessing)
-
-1. 빈 객체(Bean Instance) 생성 (생성자(Constructor) 또는 팩토리 메서드(Factory Method) 사용).
-2. 빈 프로퍼티(Bean Property)에 값과 빈 레퍼런스 설정.
-3. Aware Interface에 정의된 Setter 메서드 호출
-4. 빈 인스턴스(Bean Instance)를 각 빈 후처리기(Bean Post Processor)의 postProcessBeforeInitialization() 에 전달.
-5. 초기화 Callback 메서드 호출
-6. 빈 인스턴스(Bean Instance)를 각 빈 후처리기(Bean Post Processor)의 postProcessAfterInitialization() 에 전달.
-7. 빈 사용 준비 완료
-8. 컨테이너 종료 후, 소멸(Destructor) Callback 메서드 호출
-
-
-
-
-![lifecycle](/assets/lifecycle.jpeg)
-
-
-
-
-
-
-
-
-
-
+## IoC 컨테이너 - Component 와 컴포넌트 스캔
+## IoC 컨테이너 - 빈 스코프
 
 
 
