@@ -3,7 +3,7 @@ layout: post
 title:  "JAVA MASTER PLAN"
 date:   2019-10-08 10:00:00
 author: sjung
-categories: study
+categories: study plan
 tags: develop
 ---
 
