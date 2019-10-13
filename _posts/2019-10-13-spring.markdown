@@ -53,7 +53,7 @@ beanPostProcessor
 8. 컨테이너 종료 후, 소멸(Destructor) Callback 메서드 호출
 
 
-![Alt text](/Users/seokjung/Downloads/lifecycle.jpeg)
+![lefecycle](/assets/lifecycle.jpeg)
 
 
 
