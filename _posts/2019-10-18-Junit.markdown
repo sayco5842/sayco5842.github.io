@@ -8,4 +8,54 @@ tags: develop
 ---
 
 
-# Junit
+
+# 단위테스트
+
+## 작성해야 하는 이유
+* 어떤 기능을 막 코딩했고 그것이 예상한대로 작동하는지 알고 싶습니다.
+* 시스템에 작성한 변경 사항을 문서화하여 자신과 다른 사람들이 나중에 이해하도록 하고 싶습니다.
+* 코드를 변경하고 그것으로 변경된 사항이 기존 동작을 깨뜨리지 않았는지 확인하고 싶습니다.
+* 시스템의 현재 동작을 이해하고 싶습니다.
+* 서드 파티 코드가 더 이상 기대한 대로 동작하지 않을 때를 알고자 합니다.
+
+좋은 단위테스트가 프로덕션 시스템 배포에 대한 자신감을 높여준다는것.
+
+
+## AAA
+* 준비 (Arrange)
+* 실행 (Act)
+* 단언 (Assert)
+* 사후 (After) -> cleanup
+
+<pre><code>
+
+    public void testOrderStatusCancel() throws Exception {
+        # 준비
+        SOrderSheet sOrderSheet = sOrderSheetRepository.findTopByStatus(SOrderSheet.Status.Order);
+        MultiValueMap params = makeParams(sOrderSheet);
+        setApprovalRepository(sOrderSheet);
+        
+        # 실행
+        ResultActions resultActions = payCancel(params);
+        
+        # 단언
+        resultActions
+                .andExpect(status().is5xxServerError())
+                .andExpect(jsonPath("$.status", Matchers.is(2206)));
+    }
+
+</code></pre>
+
+
+## FIRST
+* Fast :빠른
+* Isolated : 고립된
+* Repeatable : 반복 가능한
+* Self-validating : 스스로 검증 가능한
+* Timely: 적시의
+
+테스트케이스는 빠르게 동작하여야 하며
+각 테스트는 독립적이여야 하며 -> 의존성이 강한 테스트 케이스 지양, 통제 할수 없는 외부 환경과 격리
+테스트는 스스로 검증 가능 해야 할 뿐만아니라 준비도 가능해야함 -> 코드를 소스 저장소에 머지할때마다 빌드가 자동 수행, 모든 테스트 수행
+
+
