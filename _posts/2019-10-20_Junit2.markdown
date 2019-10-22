@@ -11,33 +11,30 @@ tags: develop
 
 # 단위테스트
 
-## 무엇을 테스트할 것인지
-* Right 결과가 올바른가?
-* B 경계조건은 맞는가?
-* I 역 관계를 검사할 수 있는가?
-* C 다른 수단을 활용하여 교차 검사할 수 있는가?
-* E 오류 조건을 강제로 일어나게 할 수 있는가?
+## 무엇을 테스트할 것인지 Right-BICEP
+* Right 결과가 올바른가? -> 행복경로 테스트를 할 수 없다면 내용을 완전히 이해하지못한것
+* B 경계조건은 맞는가? -> 모서리사례 (빈값, 특수문자, 시간순이 맞지않는경우)
+* I 역 관계를 검사할 수 있는가? 
+* C 다른 수단을 활용하여 교차 검사할 수 있는가? -> 다른데이터를 이용하여 데이터가 합산되는지 확인
+* E 오류 조건을 강제로 일어나게 할 수 있는가? -> 불행한 경로 테스트
 * P 성능 조건은 기준에 부합하는가?
 
+행복경로, 경계조건, 오류조건 다루는 테스트를 작성해야 함
+또 검사를 교차검사하고 역관계를 살펴보며 테스트 코드의 유효성을 강화할 수 있다.
+단순히 커버리지를 올린다고 좋은 코드는 아님.
 
 
-<pre><code>
+## 경계조건에서는 CORRECT
+* C onfomance(준수) - 값이 기대한 양식을 준수하고 있는가? (이메일 양식)
+* O rdering (순서) - 값의 집합이 적절하게 정렬되거나 정렬되지 않았나?
+* R ange (범위) - 이성적인 최솟값과 최댓값 안에 있는가?
+* R eference(참조) - 코드 자체에서 통제할 수 없는 어떤 외부 참조를 포함하고 있는가?
+* E xistence(존재) - 값이 존재하는가?
+* C ardinality(기수) - 정확히 충분한 값들이 있는가?
+* T ime(절대적 혹은 상대적시간) - 모든 것이 순서대로 일어나는가?
 
-    public void testOrderStatusCancel() throws Exception {
-        # 준비
-        SOrderSheet sOrderSheet = sOrderSheetRepository.findTopByStatus(SOrderSheet.Status.Order);
-        MultiValueMap params = makeParams(sOrderSheet);
-        setApprovalRepository(sOrderSheet);
-        
-        # 실행
-        ResultActions resultActions = payCancel(params);
-        
-        # 단언
-        resultActions
-                .andExpect(status().is5xxServerError())
-                .andExpect(jsonPath("$.status", Matchers.is(2206)));
-    }
 
-</code></pre>
+
+
 
 
