@@ -56,4 +56,17 @@ REST == 아키텍처 스타일 == 제약조건들
 # self-descrive messages
 메시지는 스스로 설명할 수 있어야한다.
 
+<pre><code>
+HTTP/1.1 200 OK
+Content-Type: application/json
+[ {"op": "remove", "path": "a/b/c"}]
+</code></pre>
+
+
+<pre><code>
+HTTP/1.1 200 OK
+Content-Type: application/json-patch+json
+[ {"op": "remove", "path": "a/b/c"}]
+</code></pre>
+
 # HATEOAS
