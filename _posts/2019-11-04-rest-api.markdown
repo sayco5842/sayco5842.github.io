@@ -3,7 +3,7 @@ layout: post
 title:  "REST API"
 date:   2019-11-04 10:00:00
 author: sjung
-categories: REST API
+categories: REST
 tags: develop
 ---
 
@@ -61,6 +61,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 [ {"op": "remove", "path": "a/b/c"}]
 </code></pre>
+
+
 
 
 <pre><code>
