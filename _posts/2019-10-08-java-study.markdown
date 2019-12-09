@@ -40,6 +40,15 @@ Spring 책
 # 11/5 ~ 11/12일
 - 객체지향의 사실과 오해
 
-# 11/12 ~ 11/19일
-- TDD
 
+
+TO DO
+책
+- TDD에 대한 오해와 진실 TDD 이야기
+- Clean Architecture
+
+강의
+- Java ORM 표준 JPA프로그래밍
+- JPA 활용 1
+- JPA 활용 2
+- 실전! 스프링 데이터 JPA
