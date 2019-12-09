@@ -42,7 +42,7 @@ Spring 책
 
 
 
-TO DO
+TO DO LIST
 책
 - TDD에 대한 오해와 진실 TDD 이야기
 - Clean Architecture
