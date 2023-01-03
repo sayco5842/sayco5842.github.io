@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "스프링 부트와 JPA 실무 완전 정복 로드맵"
+date:   2023-01-03 10:00:00
+author: sjung
+categories: JPA
+tags: develop
+---
+
+# JPA 소개
+
+## SQL 중심적인 개발의 문제점
+
+* SQL 중심적 개발!
+
+
+~~~java
+// SQL 중심적 개발!
+public class Member {
+  private String memberId;
+  private String name;
+  ...
+}
+
+~~~
+
+```
+INSERT INTO MEMBER(MEMBER_ID, NAME) VALUES ...
+SELECT MEMBER_ID, NAME FROM MEMBER
+UPDATE MEMBER SET
+```
+
+DB와 통신하기위해 불가피하게 SQL을 많이 작성한다.
+
+* 패러다임의 불일치!
+
+1. 상속
+2. 연관관계
+3. 데이터 타입
+4. 데이터 식별방법
+
+
+> 상속
+
+<img width="1013" alt="image" src="https://user-images.githubusercontent.com/23027091/210369387-80695ebe-f7cc-4e5e-89ae-b117e0494090.png">
+
+만약 앨범을 생성한다면...
+1. INSERT INTO ITEM ...
+2. INSERT INTO ALBUM ...
+
+조회를 한다면..
+1. join쿼리작성
+2. 각 객체 생성
+3. 객 객체에 담아주고..
+4. 복잡...
+
+
+> 연관 관계
+
+<img width="615" alt="image" src="https://user-images.githubusercontent.com/23027091/210370049-6cc171bd-d556-4999-a5e6-3dc63314ebe7.png">
+
+1. 객체를 관계형 DB에맞게 설계하게됨.
+2. 엔티티 신뢰가 깨짐 member.getTeam(), member.getOrder() (null)
+
+> 데이터 타입
+
+
+
+
+
