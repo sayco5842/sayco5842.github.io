@@ -86,6 +86,7 @@ DB와 통신하기위해 불가피하게 SQL을 많이 작성한다.
 
 
 저장
+
 <img width="774" alt="image" src="https://user-images.githubusercontent.com/23027091/210375380-5fd9597f-178f-4f2f-a83c-917ae3339bd7.png">
 
 조회
