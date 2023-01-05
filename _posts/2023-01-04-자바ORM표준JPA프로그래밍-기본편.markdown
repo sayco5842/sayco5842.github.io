@@ -1,1 +1,16 @@
-ddd
+---
+layout: post
+title:  "자바 ORM 표준JPA 프로그래밍-기본편-01"
+date:   2023-01-04 10:00:00
+author: sjung
+categories: JPA
+tags: develop
+---
+
+# JPA 시작하기
+
+
+<img width="494" alt="image" src="https://user-images.githubusercontent.com/23027091/210797418-ced86b80-f05d-494b-a970-07ca70e22ee5.png">
+
+
+
